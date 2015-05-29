@@ -6,8 +6,9 @@
 //  Copyright (c) 2015 Bloc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ViewController.h"
 
-@interface WhiskeyViewController : UIViewController
+
+@interface WhiskeyViewController : ViewController
 
 @end

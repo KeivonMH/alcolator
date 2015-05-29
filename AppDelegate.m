@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AppDelegate.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +22,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    UIViewController *viewController = [[UIViewController alloc] init];
+    ViewController *viewController = [[ViewController alloc] init];
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];
     
