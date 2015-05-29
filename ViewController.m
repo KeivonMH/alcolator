@@ -48,7 +48,8 @@
 
     // Set our primary view's background color to lightGrayColor
     
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor redColor];
+    self.font = [UIFont fontWithName:@"AppleGothic" size: 14];
     
     // Tells the text field that `self`, this instance of `BLCViewController` should be treated as the text field's delegate
     
@@ -57,6 +58,9 @@
     // Set the placeholder text
     
     self.beerPercentTextField.placeholder = NSLocalizedString(@"% Alcohol Content Per Beer", @"Beer percent placeholder text");
+    
+    self.beerPercentTextField.borderStyle = UITextBorderStyleRoundedRect;
+    
     
     // Tells `self.beerCountSlider` that when its value changes, it should call `[self -sliderValueDidChange:]`.
     // This is equivalent to connecting the IBAction in our previous checkpoint
@@ -88,7 +92,7 @@
 - (void) viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
-    CGFloat viewWidth = 320;
+    CGFloat viewWidth = self.view.frame.size.width;
     CGFloat padding = 20;
     CGFloat itemWidth = viewWidth - padding - padding;
     CGFloat itemHeight = 44;
@@ -99,7 +103,7 @@
     self.beerCountSlider.frame = CGRectMake(padding, bottomOfTextField + padding, itemWidth, itemHeight);
     
     CGFloat bottomOfSlider = CGRectGetMaxY(self.beerCountSlider.frame);
-    self.resultLabel.frame = CGRectMake(padding, bottomOfSlider + padding, itemWidth, itemHeight * 4);
+    self.resultLabel.frame = CGRectMake(padding, bottomOfSlider + padding, itemWidth, itemHeight * 2);
     
     CGFloat bottomOfLabel = CGRectGetMaxY(self.resultLabel.frame);
     self.calculateButton.frame = CGRectMake(padding, bottomOfLabel + padding, itemWidth, itemHeight);

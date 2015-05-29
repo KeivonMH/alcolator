@@ -14,6 +14,7 @@
 @property (weak, nonatomic) UILabel *resultLabel;
 @property (weak, nonatomic) UISlider *beerCountSlider;
 @property (weak, nonatomic) UILabel *sliderLabel;
+@property (nonatomic, retain) UIFont *font;
 
 -(void)buttonPressed:(UIButton *)sender;
 @end
