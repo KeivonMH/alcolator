@@ -48,8 +48,7 @@
 
     // Set our primary view's background color to lightGrayColor
     
-    self.view.backgroundColor = [UIColor redColor];
-    self.font = [UIFont fontWithName:@"AppleGothic" size: 14];
+    self.view.backgroundColor = [UIColor grayColor];
     
     // Tells the text field that `self`, this instance of `BLCViewController` should be treated as the text field's delegate
     
@@ -60,6 +59,8 @@
     self.beerPercentTextField.placeholder = NSLocalizedString(@"% Alcohol Content Per Beer", @"Beer percent placeholder text");
     
     self.beerPercentTextField.borderStyle = UITextBorderStyleRoundedRect;
+    
+    [self.beerPercentTextField setFont:[UIFont fontWithName:@"CHALKDUSTER" size:10]];
     
     
     // Tells `self.beerCountSlider` that when its value changes, it should call `[self -sliderValueDidChange:]`.
@@ -80,6 +81,8 @@
     
     [self.calculateButton setTitle:NSLocalizedString(@"Calculate!", @"Calculate command") forState:UIControlStateNormal];
     
+     [self.calculateButton setFont:[UIFont fontWithName:@"MENLO" size:16]];
+    
     // Tells the tap gesture recognizer to call `[self -tapGestureDidFire:]` when it detects a tap.
     
     [self.hideKeyboardTapGestureRecognizer addTarget:self action:@selector(tapGestureDidFire:)];
@@ -87,6 +90,8 @@
     // Gets rid of the maximum number of lines on the label
     
     self.resultLabel.numberOfLines = 0;
+    
+    [self.resultLabel setFont:[UIFont fontWithName:@"CHALKDUSTER" size:24]];
 }
 
 - (void) viewWillLayoutSubviews {
