@@ -12,9 +12,9 @@
 		FA38EF721B0EE5100006E5D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA38EF711B0EE5100006E5D2 /* main.m */; };
 		FA38EF771B0EE54D0006E5D2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA38EF731B0EE54D0006E5D2 /* LaunchScreen.xib */; };
 		FA38EF781B0EE54D0006E5D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA38EF751B0EE54D0006E5D2 /* Images.xcassets */; };
-		FA38EF791B0EE54D0006E5D2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA38EF761B0EE54D0006E5D2 /* Info.plist */; };
 		FA9E91831B095173009812E8 /* AlcolatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9E91821B095173009812E8 /* AlcolatorTests.m */; };
 		FAD47B5A1B16C46500AEE782 /* WhiskeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD47B591B16C46500AEE782 /* WhiskeyViewController.m */; };
+		FAF945911B82E15E0056F171 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF945901B82E15E0056F171 /* MainMenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +42,8 @@
 		FA9E91821B095173009812E8 /* AlcolatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlcolatorTests.m; sourceTree = "<group>"; };
 		FAD47B581B16C46500AEE782 /* WhiskeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhiskeyViewController.h; sourceTree = "<group>"; };
 		FAD47B591B16C46500AEE782 /* WhiskeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhiskeyViewController.m; sourceTree = "<group>"; };
+		FAF9458F1B82E15E0056F171 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = SOURCE_ROOT; };
+		FAF945901B82E15E0056F171 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,8 @@
 				FA38EF6B1B0EE4DB0006E5D2 /* AppDelegate.h */,
 				FA38EF6C1B0EE4DB0006E5D2 /* AppDelegate.m */,
 				FA9E91661B095173009812E8 /* Supporting Files */,
+				FAF9458F1B82E15E0056F171 /* MainMenuViewController.h */,
+				FAF945901B82E15E0056F171 /* MainMenuViewController.m */,
 			);
 			path = Alcolator;
 			sourceTree = "<group>";
@@ -166,7 +170,7 @@
 		FA9E915B1B095173009812E8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Bloc;
 				TargetAttributes = {
 					FA9E91621B095173009812E8 = {
@@ -202,7 +206,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA38EF791B0EE54D0006E5D2 /* Info.plist in Resources */,
 				FA38EF781B0EE54D0006E5D2 /* Images.xcassets in Resources */,
 				FA38EF771B0EE54D0006E5D2 /* LaunchScreen.xib in Resources */,
 			);
@@ -226,6 +229,7 @@
 				FAD47B5A1B16C46500AEE782 /* WhiskeyViewController.m in Sources */,
 				FA38EF721B0EE5100006E5D2 /* main.m in Sources */,
 				FA38EF701B0EE4DB0006E5D2 /* AppDelegate.m in Sources */,
+				FAF945911B82E15E0056F171 /* MainMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

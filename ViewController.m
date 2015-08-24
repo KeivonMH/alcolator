@@ -45,7 +45,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-
+    
     // Set our primary view's background color to lightGrayColor
     
     self.view.backgroundColor = [UIColor grayColor];
@@ -81,7 +81,7 @@
     
     [self.calculateButton setTitle:NSLocalizedString(@"Calculate!", @"Calculate command") forState:UIControlStateNormal];
     
-     [self.calculateButton setFont:[UIFont fontWithName:@"MENLO" size:16]];
+    [self.calculateButton.titleLabel setFont:[UIFont fontWithName:@"MENLO" size:16]];
     
     // Tells the tap gesture recognizer to call `[self -tapGestureDidFire:]` when it detects a tap.
     
@@ -92,13 +92,18 @@
     self.resultLabel.numberOfLines = 0;
     
     [self.resultLabel setFont:[UIFont fontWithName:@"CHALKDUSTER" size:24]];
+    self.resultLabel.minimumScaleFactor = .5;
+    self.resultLabel.adjustsFontSizeToFitWidth = YES;
+    
+    
+    self.view.backgroundColor = [UIColor colorWithRed:0.741 green:0.925 blue:0.714 alpha:1]; /*#bdecb6*/
 }
 
 - (void) viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
     CGFloat viewWidth = self.view.frame.size.width;
-    CGFloat padding = 20;
+    CGFloat padding = 100;
     CGFloat itemWidth = viewWidth - padding - padding;
     CGFloat itemHeight = 44;
     
@@ -134,8 +139,10 @@
 - (void)sliderValueDidChange:(UISlider *)sender {
     NSLog(@"Slider value changed to %f", sender.value);
     [self.beerPercentTextField resignFirstResponder];
+    [self.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%d", (int) sender.value]];
     [self buttonPressed: nil];
     self.sliderLabel.text = @(sender.value).stringValue;
+    
 }
 
 - (void)buttonPressed:(UIButton *)sender {
@@ -166,8 +173,8 @@
         beerText = NSLocalizedString(@"beer", @"singular beer");
     } else {
         beerText = NSLocalizedString(@"beers", @"plural of beer");
-    
-}
+        
+    }
     NSString *wineText;
     
     if (numberOfWineGlassesForEquivalentAlcoholAmount == 1) {
@@ -175,17 +182,32 @@
     } else {
         wineText = NSLocalizedString(@"glasses", @"plural of glass");
     }
-
-//generate the result text, and display it on the label
+    
+    //generate the result text, and display it on the label
     
     NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ contains as much alcoholas %.1f %@ of wine.", nil), numberOfBeers, beerText, numberOfWineGlassesForEquivalentAlcoholAmount, wineText];
     
     self.resultLabel.text = resultText;
-                            
-                            }
-                                                                        
+    self.title = [NSString stringWithFormat:@"Wine (%d %@)", numberOfBeers, wineText];
+}
+
 - (void)tapGestureDidFire:(UITapGestureRecognizer *) sender {
     [self.beerPercentTextField resignFirstResponder];
+    
+
+}
+
+
+- (instancetype) init {
+    self = [super init];
+    
+    if (self) {
+        self.title = NSLocalizedString(@"Wine", @"wine");
+    
+        [self.tabBarItem setTitlePositionAdjustment:UIOffsetMake(0, -18)];
+    }
+    
+    return self;
 }
 
 @end
