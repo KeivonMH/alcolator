@@ -27,6 +27,7 @@
     WhiskeyViewController *whiskeyVC = [[WhiskeyViewController alloc] init];
     UITabBarController *tabBarVC = [[UITabBarController alloc] init];
     tabBarVC.viewControllers = @[wineVC, whiskeyVC];
+    
     tabBarVC.delegate = self;
     
     self.window.rootViewController = tabBarVC;
@@ -60,8 +61,8 @@
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
-    
-    NSLog(@"I'm the operator with my pocket alcolator");
+   
+    NSLog(@"New view controller selected: %@", viewController.title);
     
 }
 
