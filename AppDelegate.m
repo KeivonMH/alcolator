@@ -58,7 +58,11 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (void)tabBarController:(UITabBarController *)tabBarController {
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    
+    NSLog(@"I'm the operator with my pocket alcolator");
+    
 }
 
 @end
